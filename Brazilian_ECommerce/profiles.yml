@@ -1,0 +1,13 @@
+Brazilian_ECommerce:
+  outputs:
+    dev:
+      account: hmquktl-ze81371
+      database: Brazilian_Ecommerce
+      password: '@@@@Long2003'
+      role: ACCOUNTADMIN
+      schema: mart
+      threads: 200
+      type: snowflake
+      user: a44306
+      warehouse: COMPUTE_WH
+  target: dev
