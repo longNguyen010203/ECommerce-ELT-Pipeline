@@ -1,0 +1,82 @@
+version: '3.9'
+
+
+services:
+
+  # Pipeline
+  elt_pipeline: 
+    build:
+      context: ./Ecommerce_dagster
+      dockerfile: Dockerfile
+    container_name: elt_pipeline
+    image: elt_pipeline:latest
+    restart: always
+    volumes:
+      - ./Ecommerce_dagster:/opt/dagster/app
+    ports:
+      - 4040:4040
+    env_file: .env
+    networks:
+      - de_network
+
+  # dbt
+
+  # Dagster
+  de_psql:
+    image: postgres:15
+    container_name: de_psql
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+      # - ./load_dataset:/tmp/load_dataset
+    ports:
+      - 5432:5432
+    env_file: .env
+    networks:
+      - de_network
+
+  # Dagster
+  de_dagster:
+    build:
+      context: ./dagster/
+    container_name: de_dagster
+    image: de_dagster
+
+  de_dagster_dagit:
+    image: de_dagster:latest
+    entrypoint:
+      - dagit
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "3001"
+      - -w
+      - workspace.yaml
+    container_name: de_dagster_dagit
+    expose:
+      - "3001"
+    ports:
+      - 3001:3001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./dagster_home:/opt/dagster/dagster_home
+    env_file: .env
+    networks:
+      - de_network
+
+  de_dagster_daemon:
+    image: de_dagster:latest
+    entrypoint:
+      - dagster-daemon
+      - run
+    container_name: de_dagster_daemon
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./dagster_home:/opt/dagster/dagster_home
+    env_file: .env
+    networks:
+      - de_network
+
+networks:
+  de_network:
+    driver: bridge
+    name: de_network
