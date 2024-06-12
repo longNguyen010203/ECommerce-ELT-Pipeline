@@ -1,2 +1,17 @@
+__pycache__/
+
 .py_venv/
 logs/
+
+.env/
+
+dagster_home/.telemetry/
+dagster_home/history/
+dagster_home/schedules/
+
+postgresql/
+.nux/
+.logs_queue/
+
+
+tmp9fq_ff8m/

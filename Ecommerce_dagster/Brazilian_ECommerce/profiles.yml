@@ -5,7 +5,7 @@ Brazilian_ECommerce:
       database: Brazilian_Ecommerce
       password: '@@@@Long2003'
       role: ACCOUNTADMIN
-      schema: mart
+      schema: raw
       threads: 200
       type: snowflake
       user: a44306
