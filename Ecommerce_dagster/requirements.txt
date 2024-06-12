@@ -1,5 +1,8 @@
 dagster-dbt==0.23.9
 dagster==1.7.9
 dagit==1.7.9
-dagster-postgres
+dagster-postgres==0.23.9
 dbt-snowflake==1.8.2
+polars==0.20.31
+pandas==2.2.2
+dagster-snowflake==0.23.9
