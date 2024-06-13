@@ -22,7 +22,7 @@ def connect_psql(config: dict):
         raise e
     
     
-class PostgreSQLIOManager(IOManager):
+class CSVIOManager(IOManager):
     
     def __init__(self, config) -> None:
         self._config = config
@@ -34,12 +34,11 @@ class PostgreSQLIOManager(IOManager):
         pass
     
     def _get_path(self, context: Union[InputContext, OutputContext]):
-        folderName, fileName = context.asset_key.path
+        layer, folderName, fileName = context.asset_key.path
         path = "/tmp/{}/{}.csv".format(folderName, fileName)
         return path
     
     def extract_data(self, context) -> pl.DataFrame:
-        
         with connect_psql(self._config) as db_con:
             path = self._get_path(context)
             return pl.read_csv(path)
