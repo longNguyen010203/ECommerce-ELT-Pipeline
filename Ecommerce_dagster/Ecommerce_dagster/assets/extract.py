@@ -13,8 +13,7 @@ GROUP_NAME = "raw"
 @asset(
     name="olist_customers_dataset",
     required_resource_keys={"psql_io_manager"},
-    io_manager_key="psql_io_manager",
-    key_prefix=["brazilian_extract"],
+    key_prefix=["extract", "brazilian"],
     compute_kind="postgres",
     group_name=GROUP_NAME
 )
@@ -41,7 +40,7 @@ def olist_customers_dataset(context: AssetExecutionContext) -> Output[pl.DataFra
     name="olist_geolocation_dataset",
     required_resource_keys={"psql_io_manager"},
     io_manager_key="psql_io_manager",
-    key_prefix=["brazilian_extract"],
+    key_prefix=["extract", "brazilian"],
     compute_kind="postgres",
     group_name=GROUP_NAME
 )
@@ -68,7 +67,7 @@ def olist_geolocation_dataset(context: AssetExecutionContext) -> Output[pl.DataF
     name="olist_order_items_dataset",
     required_resource_keys={"psql_io_manager"},
     io_manager_key="psql_io_manager",
-    key_prefix=["brazilian_extract"],
+    key_prefix=["extract", "brazilian"],
     compute_kind="postgres",
     group_name=GROUP_NAME
 )
@@ -95,7 +94,7 @@ def olist_order_items_dataset(context: AssetExecutionContext) -> Output[pl.DataF
     name="olist_order_payments_dataset",
     required_resource_keys={"psql_io_manager"},
     io_manager_key="psql_io_manager",
-    key_prefix=["brazilian_extract"],
+    key_prefix=["extract", "brazilian"],
     compute_kind="postgres",
     group_name=GROUP_NAME
 )
@@ -122,7 +121,7 @@ def olist_order_payments_dataset(context: AssetExecutionContext) -> Output[pl.Da
     name="olist_orders_dataset",
     required_resource_keys={"psql_io_manager"},
     io_manager_key="psql_io_manager",
-    key_prefix=["brazilian_extract"],
+    key_prefix=["extract", "brazilian"],
     compute_kind="postgres",
     group_name=GROUP_NAME
 )
@@ -143,3 +142,29 @@ def olist_orders_dataset(context: AssetExecutionContext) -> Output[pl.DataFrame]
             "records count": MetadataValue.int(pl_data.shape[0])
         }
     )
+
+
+# @asset(
+#     name="olist_products_dataset",
+#     required_resource_keys={"csv_io_manager"},
+#     io_manager_key="csv_io_manager",
+#     key_prefix=["brazilian"],
+#     compute_kind="CSV",
+#     group_name=GROUP_NAME
+# )
+# def olist_products_dataset(context: AssetExecutionContext) -> Output[pl.DataFrame]:
+#     """
+#         Load data from table 'olist_products_dataset'
+#         in CSV file as polars DataFrame
+#     """
+    
+#     pl_data: pl.DataFrame = context.resources.csv_io_manager.extract_data(context)
+#     context.log.info(f"Extract table 'olist_products_dataset' from CSV file Success")
+    
+#     return Output(
+#         value=pl_data,
+#         metadata={
+#             "columns count": MetadataValue.int(pl_data.shape[1]),
+#             "records count": MetadataValue.int(pl_data.shape[0])
+#         }
+#     )

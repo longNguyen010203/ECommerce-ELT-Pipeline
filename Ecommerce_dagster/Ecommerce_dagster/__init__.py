@@ -18,6 +18,6 @@ defs = Definitions(
     resources={
         "dbt": DbtCliResource(project_dir=os.fspath(dbt_project_dir)),
         "psql_io_manager": postgres,
-        "snowflake": snowflake
+        "snowflake": snowflake,
     },
 )

@@ -6,3 +6,4 @@ dbt-snowflake==1.8.2
 polars==0.20.31
 pandas==2.2.2
 dagster-snowflake==0.23.9
+pyarrow==16.1.0
