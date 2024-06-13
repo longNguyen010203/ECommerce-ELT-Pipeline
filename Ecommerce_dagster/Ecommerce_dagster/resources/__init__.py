@@ -1,10 +1,23 @@
 import os
 
 from .psql_io_manager import PostgreSQLIOManager
+from .csv_io_manager import CSVIOManager
+
 from dagster_snowflake import SnowflakeResource
 
 
 postgres = PostgreSQLIOManager(
+    {
+        "host": os.getenv("POSTGRES_HOST"),
+        "port": os.getenv("POSTGRES_PORT"),
+        "database": os.getenv("POSTGRES_DB"),
+        "user": os.getenv("POSTGRES_USER"),
+        "password": os.getenv("POSTGRES_PASSWORD"),
+    }
+)
+
+
+csv = CSVIOManager(
     {
         "host": os.getenv("POSTGRES_HOST"),
         "port": os.getenv("POSTGRES_PORT"),
