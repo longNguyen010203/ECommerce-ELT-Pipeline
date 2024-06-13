@@ -13,6 +13,7 @@ services:
     restart: always
     volumes:
       - ./Ecommerce_dagster:/opt/dagster/app
+      - ./dataset/brazilian:/tmp/brazilian
     ports:
       - 4040:4040
     env_file: .env
