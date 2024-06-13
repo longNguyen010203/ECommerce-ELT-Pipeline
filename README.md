@@ -4,3 +4,6 @@
 
 ### 2. Relationships between tables
 ![Hình minh họa](./images/relational.png)
+
+### 2. Data Lineage
+![Hình minh họa](./images/data-lineage.png)
