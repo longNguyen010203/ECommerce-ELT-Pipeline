@@ -1,6 +1,30 @@
-# ECommerce-ELT-Pipeline
+# 🌇 ECommerce-ELT-Pipeline
 
-###### In this project, I build a simple data pipeline following the ELT(extract - load - transform) model using the Brazilian-Ecommerce dataset, perform data processing and transformation, serve to create reports, in-depth analysis and support for the Data Analyst team
+#### In this project, I build a simple data pipeline following the ELT(extract - load - transform) model using the Brazilian-Ecommerce dataset, perform data processing and transformation, serve to create reports, in-depth analysis and support for the Data Analyst team
+
+## 📦 Technologies
+
+ - `PostgreSQL`
+ - `Polars`
+ - `Dbt`
+ - `Dagster`
+ - `Snowflake`
+ - `Docker`
+ - `Metabase`
+ - `Apache Superset`
+
+## 👩🏽‍🍳 Features
+
+#### This is what data pipeline can do in this project:
+ - 
+
+
+
+
+
+
+
+
 
 
 
