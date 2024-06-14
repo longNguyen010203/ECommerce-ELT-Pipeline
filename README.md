@@ -64,6 +64,10 @@ Here's what you can do with NinjaSketch:
  - You can also create new `data charts` as well as change existing `charts` as you like with extremely diverse `chart types` on `Metabase` and `Apache Superset`.
  - You can also create new or change my existing `dashboards` as you like
 
+## 👩🏽‍🍳 The Process
+
+## 📚 What I Learned
+
 ## 💭 How can it be improved?
 
  - Add more `data sources` to increase data richness.
@@ -87,3 +91,6 @@ To run the project in your local environment, follow these steps:
 8. Open [http://localhost:3030](http://localhost:3030) to see charts and dashboards
 
 ## 🍿 Video
+<video width="600" controls>
+  <source src="./images/Demo.webm" type="video/webm">
+</video>
