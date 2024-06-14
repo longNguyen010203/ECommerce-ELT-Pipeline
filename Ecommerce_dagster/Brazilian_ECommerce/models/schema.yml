@@ -45,28 +45,28 @@ models:
     config:
       meta:
         dagster:
-          group: staging
+          group: mart
 
   - name: sales_values_by_customer_state
     config:
       meta:
         dagster:
-          group: staging
+          group: mart
 
   - name: sales_values_by_geolocation_city
     config:
       meta:
         dagster:
-          group: staging
+          group: mart
 
   - name: sales_values_by_review_score
     config:
       meta:
         dagster:
-          group: staging
+          group: mart
 
   - name: sales_values_by_seller_city
     config:
       meta:
         dagster:
-          group: staging
+          group: mart

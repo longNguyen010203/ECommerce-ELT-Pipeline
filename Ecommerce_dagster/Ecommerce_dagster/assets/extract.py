@@ -8,7 +8,7 @@ from dagster import (
 )
 
 
-GROUP_NAME = "staging"
+GROUP_NAME = "source"
 
 @asset(
     name="olist_customers_dataset",
