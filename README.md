@@ -76,4 +76,14 @@ Here's what you can do with NinjaSketch:
 
 ## 🚦 Running the Project
 
-###### To run the project in your local environment, follow these steps:
+To run the project in your local environment, follow these steps:
+1. Run `git clone https://github.com/longNguyen010203/ECommerce-ELT-Pipeline.git` to clone the repository to your local machine.
+2. run `make build` to build the images from the Dockerfile
+3. run `make up` to pull images from docker hub and launch services
+4. run `make psql_create` to create tables with schema for PostgreSQL
+5. run `make psql_import` to load data from CSV file to PostgreSQL
+6. Open [http://localhost:3001](http://localhost:3001) and click `Materialize all` button to run the Pipeline
+7. Open [https://app.snowflake.com](https://app.snowflake.com) and login to check and monitor updated data
+8. Open [http://localhost:3030](http://localhost:3030) to see charts and dashboards
+
+## 🍿 Video
