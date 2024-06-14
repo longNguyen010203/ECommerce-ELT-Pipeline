@@ -15,7 +15,7 @@ In this project, I build a simple data pipeline following the ELT(extract - load
 
 ## 🔦 About Project
 
-### 1. Pipeline Design
+#### 1. Pipeline Design
 <img src="./images/data_flow.png" style="width: 100%;">
 
  - **Data Source**: The project uses the [Brazilian Ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) public dataset by Olist, downloaded from [kaggle.com](https://www.kaggle.com) in `.csv` format
