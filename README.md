@@ -44,23 +44,36 @@ In this project, I build a simple data pipeline following the ELT(extract - load
 <img src="./images/Lineage_Graph.png">
 
 Graph lineage (dbt) in this project includes models divided into 3 schemas:
- - **raw schema**: contains original data tables, `collected` from different data sources: `PostgrSQL` and `CSV` files
- - **staging schema**: This is a temporary layer that contains data tables that are `transformed`, `processed`, and `cleaned` before being sent to the `mart` schema
- - **mart schema**: Contains prepared data tables, optimized for querying, and has some simple aggregate calculations
+ - **raw schema**: contains original data tables, `collected` from different data sources: `PostgrSQL` and `CSV` files.
+ - **staging schema**: This is a temporary layer that contains data tables that are `transformed`, `processed`, and `cleaned` before being sent to the `mart` schema.
+ - **mart schema**: Contains prepared data tables, optimized for querying, and has some simple aggregate calculations.
 
 ###### 2. Graph Lineage (Dagster)
 <img src="./images/Lineage_Graph_Medium.png">
 
 Graph Lineage (dagster) trong dự án này bao gồm 4 layer:
- - **source layer**: This layer contains `assets` that `collect` data from `PostgreSQL` and `CSV` files using `Polars` `DataFrame`
- - **raw layer**: This layer contains `assets` that perform the task of loading data from `Polars` `DataFrame` into `Snowflake` warehouse in `raw` schema
- - **staging layer**: This layer contains assets that handle data transformation from the `raw` schema, then the data is put into the `staging` schema
+ - **source layer**: This layer contains `assets` that `collect` data from `PostgreSQL` and `CSV` files using `Polars` `DataFrame`.
+ - **raw layer**: This layer contains `assets` that perform the task of loading data from `Polars` `DataFrame` into `Snowflake` warehouse in `raw` schema.
+ - **staging layer**: This layer contains assets that handle data transformation from the `raw` schema, then the data is put into the `staging` schema.
  - **mart layer**: This layer contains `assets` that are responsible for synthesizing calculations from data in the `staging` schema and then putting the data into the `mart` schema.
-
-
-
 
 ## 🦄 Features
 
-This is what data pipeline can do in this project:
- - 
+Here's what you can do with NinjaSketch:
+ - You can completely change the logic or create new `assets` in the `data pipeline` as you wish, perform `aggregate` `calculations` on the `assets` in the `pipeline` according to your purposes.
+ - You can also create new `data charts` as well as change existing `charts` as you like with extremely diverse `chart types` on `Metabase` and `Apache Superset`.
+ - You can also create new or change my existing `dashboards` as you like
+
+## 💭 How can it be improved?
+
+ - Add more `data sources` to increase data richness.
+ - Refer to other `data warehouses` besides `Snowflake` such as `Amazon Redshift` or `Google Bigquery`.
+ - Perform more `cleaning` and `optimization` `processing` of the data.
+ - Perform more advanced `statistics`, `analysis` and `calculations`.
+ - Check out other popular and popular `data orchestration` tools like `Apache Airflow`.
+ - Separate `dbt` into a separate service (separate `container`) in `docker` when the project expands
+ - Learn about `dbt packages` like `dbt-labs/dbt_utils` to help make the `transformation` process faster and more optimal.
+
+## 🚦 Running the Project
+
+###### To run the project in your local environment, follow these steps:
