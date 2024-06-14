@@ -1,0 +1,72 @@
+models:
+  - name: dim_products
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: fact_sales
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: dim_customers
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: dim_geolocation
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: dim_orders
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: dim_reviews
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: dim_sellers
+    config:
+      meta:
+        dagster:
+          group: staging
+
+  - name: sales_values_by_category
+    config:
+      meta:
+        dagster:
+          group: mart
+
+  - name: sales_values_by_customer_state
+    config:
+      meta:
+        dagster:
+          group: mart
+
+  - name: sales_values_by_geolocation_city
+    config:
+      meta:
+        dagster:
+          group: mart
+
+  - name: sales_values_by_review_score
+    config:
+      meta:
+        dagster:
+          group: mart
+
+  - name: sales_values_by_seller_city
+    config:
+      meta:
+        dagster:
+          group: mart

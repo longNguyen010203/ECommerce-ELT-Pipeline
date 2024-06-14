@@ -1,0 +1,50 @@
+
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: raw_order_items
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_order_items"]
+
+      - name: raw_order_payments
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_order_payments"]
+
+      - name: raw_orders
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_orders"]
+
+      - name: raw_products
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_products"]
+
+      - name: raw_customers
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_customers"]
+
+      - name: raw_geolocation
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_geolocation"]
+
+      - name: raw_order_reviews
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_order_reviews"]
+
+      - name: raw_sellers
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_sellers"]
+
+      - name: raw_product_category_name_translation
+        meta:
+          dagster:
+            asset_key: ["load", "brazilian", "raw_product_category_name_translation"]
