@@ -83,6 +83,3 @@ To run the project in your local environment, follow these steps:
 8. Open [http://localhost:3030](http://localhost:3030) to see charts and dashboards
 
 ## 🍿 Video
-<video width="600" controls>
-  <source src="./images/Demo.webm" type="video/webm">
-</video>
