@@ -2,17 +2,6 @@
 
 In this project, I build a simple data pipeline following the ELT(extract - load - transform) model using the Brazilian-Ecommerce dataset, perform data processing and transformation, serve to create reports, in-depth analysis and support for the Data Analyst team
 
-## 📦 Technologies
-
- - `PostgreSQL`
- - `Polars`
- - `Dbt`
- - `Dagster`
- - `Snowflake`
- - `Docker`
- - `Metabase`
- - `Apache Superset`
-
 ## 🔦 About Project
 
 #### 1. Pipeline Design
@@ -56,6 +45,17 @@ Graph Lineage (dagster) trong dự án này bao gồm 4 layer:
  - **raw layer**: This layer contains `assets` that perform the task of loading data from `Polars` `DataFrame` into `Snowflake` warehouse in `raw` schema.
  - **staging layer**: This layer contains assets that handle data transformation from the `raw` schema, then the data is put into the `staging` schema.
  - **mart layer**: This layer contains `assets` that are responsible for synthesizing calculations from data in the `staging` schema and then putting the data into the `mart` schema.
+
+## 📦 Technologies
+
+ - `PostgreSQL`
+ - `Polars`
+ - `Dbt`
+ - `Dagster`
+ - `Snowflake`
+ - `Docker`
+ - `Metabase`
+ - `Apache Superset`
 
 ## 🦄 Features
 
