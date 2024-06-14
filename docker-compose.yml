@@ -78,6 +78,19 @@ services:
     networks:
       - de_network
 
+  # Metabase
+  de_metabase:
+    image: metabase/metabase:latest
+    container_name: de_metabase
+    volumes:
+      - ./storage/metabase_data:/metabase_data
+    ports:
+      - "3030:3000"
+    env_file: .env
+    networks:
+      - de_network
+    
+
 networks:
   de_network:
     driver: bridge

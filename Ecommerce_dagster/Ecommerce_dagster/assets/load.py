@@ -16,7 +16,7 @@ from dagster_snowflake import SnowflakeResource
 from snowflake.connector.pandas_tools import write_pandas
 
 
-GROUP_NAME = "raw"
+GROUP_NAME = "staging"
 
 @multi_asset(
     ins={
