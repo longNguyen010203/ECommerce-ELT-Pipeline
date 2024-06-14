@@ -83,3 +83,4 @@ To run the project in your local environment, follow these steps:
 8. Open [http://localhost:3030](http://localhost:3030) to see charts and dashboards
 
 ## 🍿 Video
+[Demo.webm](https://github.com/longNguyen010203/ECommerce-ELT-Pipeline/assets/168116061/c22f700c-7b4f-4c05-bfac-7fb6943a0338)
