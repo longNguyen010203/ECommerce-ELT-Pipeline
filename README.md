@@ -40,22 +40,27 @@ In this project, I build a simple data pipeline following the ELT(extract - load
  - **olist_sellers_dataset**: This dataset includes data about the sellers that fulfilled orders made at Olist.
 
 #### 3. Data Lineage
-###### 1. General
-<img src="./images/Lineage_Graph.png" style="width: 100%;">
+###### 1. Graph Lineage (DBT)
+<img src="./images/Lineage_Graph.png">
 
-###### 2. Source Layer (Dagster)
-<img src="./images/source_layer_mini.png" style="width: 100%;">
+Graph lineage (dbt) in this project includes models divided into 3 schemas:
+ - **raw schema**: contains original data tables, `collected` from different data sources: `PostgrSQL` and `CSV` files
+ - **staging schema**: This is a temporary layer that contains data tables that are `transformed`, `processed`, and `cleaned` before being sent to the `mart` schema
+ - **mart schema**: Contains prepared data tables, optimized for querying, and has some simple aggregate calculations
 
-###### 3. Raw Layer (Dagster)
-<img src="./images/raw_layer_mini.png" style="width: 100%;">
+###### 2. Graph Lineage (Dagster)
+<img src="./images/Lineage_Graph_Medium.png">
 
-###### 4. Staging Layer (Dagster)
-<img src="./images/staging_layer_mini.png" style="width: 100%;">
+Graph Lineage (dagster) trong dự án này bao gồm 4 layer:
+ - **source layer**: This layer contains `assets` that `collect` data from `PostgreSQL` and `CSV` files using `Polars` `DataFrame`
+ - **raw layer**: This layer contains `assets` that perform the task of loading data from `Polars` `DataFrame` into `Snowflake` warehouse in `raw` schema
+ - **staging layer**: This layer contains assets that handle data transformation from the `raw` schema, then the data is put into the `staging` schema
+ - **mart layer**: This layer contains `assets` that are responsible for synthesizing calculations from data in the `staging` schema and then putting the data into the `mart` schema.
 
-###### 5. Mart Layer (Dagster)
-<img src="./images/mart_layer_mini.png" style="width: 100%;">
 
-## 👩🏽‍🍳 Features
+
+
+## 🦄 Features
 
 This is what data pipeline can do in this project:
- - d
+ - 
